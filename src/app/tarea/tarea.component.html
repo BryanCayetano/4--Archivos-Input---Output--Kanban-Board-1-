@@ -1,0 +1,28 @@
+<div class="kanban">
+  <div class="kanban-container">
+    <div class="kanban-column">
+      <div class="kanban-column-header">{{ tarea?.titulo }}</div>
+
+      <ul class="kanban-column-list">
+        <img class="rounded-top kanban_img" [src]="tarea?.img" />
+        <li class="card d-flex flex-row">
+          <span class="" *ngFor="let usuario of tarea?.usuarios">
+            <div *ngIf="usuario.img !== null">
+              <img
+                class="rounded-circle img_user"
+                [src]="usuario.img"
+                alt="image"
+              />
+            </div>
+          </span>
+        </li>
+
+          <li *ngIf="tarea?.fechaFin != null" [ngClass]="detectarFecha()">
+            {{ tarea?.fechaFin}}
+          </li>
+        
+
+      </ul>
+    </div>
+  </div>
+</div>
